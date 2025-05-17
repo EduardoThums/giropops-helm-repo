@@ -1,0 +1,9 @@
+{{- range $component, $config := .Values.deployments }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels: {{- include "app.labels" $config | nindent 4 }}
+  name: {{ $config.name }}
+{{- include "app.deployment" $config | nindent 0 }}
+---
+{{- end }}

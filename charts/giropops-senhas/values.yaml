@@ -1,0 +1,45 @@
+deployments:
+  giropopsSenhas:
+    name: giropops-senhas
+    image: linuxtips/giropops-senhas:1.0
+    replicas: 2
+    labels:
+      env: "dev"
+      live: "true"
+    ports:
+      - containerPort: 5000
+      - containerPort: 5001
+    resources:
+      limits:
+        memory: 128Mi
+        cpu: 0.5
+      requests:
+        memory: 64Mi
+        cpu: 0.5
+
+  redis:
+    name: redis-deployment
+    image: redis
+    replicas: 1
+    labels:
+      env: "dev"
+      live: "true"
+    ports:
+      - containerPort: 6379
+      - containerPort: 6380
+    resources:
+      limits:
+        memory: 64Mi
+        cpu: 0.5
+      requests:
+        memory: 64Mi
+        cpu: 0.5
+
+configMaps:
+  - name: mysql
+    data:
+      file.yaml:
+        key: value
+        foo: bar
+      file2.yaml:
+        ping: pong

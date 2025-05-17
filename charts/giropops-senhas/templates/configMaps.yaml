@@ -1,0 +1,4 @@
+{{- range $configMap := .Values.configMaps }}
+{{ include "app.configMap" $configMap }}
+---
+{{- end }}
