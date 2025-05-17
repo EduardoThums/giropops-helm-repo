@@ -50,3 +50,20 @@ data:
         {{- toYaml $config | nindent 6 }}
     {{- end }}
 {{- end }}
+
+
+{{/*
+Create a service
+*/}}
+{{- define "apps.service" }}
+apiVersion: v1
+kind: Service
+metadata:
+    name: {{ .name }}-service
+spec:
+    type: "ClusterIP"
+    selector:
+        app: {{ .selector | quote }}
+    ports:
+        - port: {{ .port }}
+{{- end }}

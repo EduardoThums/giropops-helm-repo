@@ -1,0 +1,4 @@
+{{- range $component, $config := .Values.services }}
+{{- include "apps.service" $config }}
+---
+{{- end }}

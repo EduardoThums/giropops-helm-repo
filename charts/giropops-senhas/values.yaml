@@ -43,3 +43,13 @@ configMaps:
         foo: bar
       file2.yaml:
         ping: pong
+
+services:
+  redis:
+    name: redis
+    port: 6379
+    selector: redis-deployment
+  giropopsSenhas:
+    name: giropops-senhas
+    port: 5000
+    selector: giropops-senhas
