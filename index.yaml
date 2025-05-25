@@ -3,6 +3,18 @@ entries:
   giropops-senhas:
   - apiVersion: v2
     appVersion: "1.0"
+    created: "2025-05-25T23:27:49.247217802Z"
+    description: Chart for the giropops senhas application
+    digest: b6ba0af5792673ea81d73f7c27d5e5b5d3635ede5a2f634046dd4b8bfe0547f4
+    icon: https://shorturl.at/Vinik
+    name: giropops-senhas
+    sources:
+    - https://github.com/badtuxx/giropops-senhas
+    urls:
+    - https://github.com/EduardoThums/giropops-helm-repo/releases/download/giropops-senhas-0.1.2/giropops-senhas-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: "1.0"
     created: "2025-05-25T22:59:22.65640374Z"
     description: Chart for the giropops senhas application
     digest: eacd68c2921d25baa98afa1d9d1a17a8ea605caf53ef8ca7bc7f17570eb68010
@@ -13,4 +25,4 @@ entries:
     urls:
     - https://github.com/EduardoThums/giropops-helm-repo/releases/download/giropops-senhas-0.1.1/giropops-senhas-0.1.1.tgz
     version: 0.1.1
-generated: "2025-05-25T22:59:22.656458193Z"
+generated: "2025-05-25T23:27:49.247246346Z"
