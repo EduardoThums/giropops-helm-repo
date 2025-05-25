@@ -1,7 +1,7 @@
 apiVersion: v2
 name: giropops-senhas
 description: Chart for the giropops senhas application
-version: 0.1.1 # chart version
+version: 0.1.2 # chart version
 appVersion: "1.0" # application version
 icon: https://shorturl.at/Vinik
 sources:
