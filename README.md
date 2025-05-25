@@ -1,6 +1,6 @@
 # Helm repo example
 
-## How to use
+## Install using helm
 
 ```bash
 # 1. add the repo in helm
@@ -13,4 +13,11 @@ helm upgrade --install giropops-senhas giropops-senhas/giropops-senhas
 k port-forward services/giropops-senhas-service 5000:5000
 
 # 4. open the application in the browser at http://localhost:5000/
+```
+
+## Install manually
+
+```bash
+# 1. apply the manifest generate with the default value
+curl -LJ https://github.com/EduardoThums/giropops-helm-repo/releases/latest/download/manifest.yaml | kubectl apply -f -
 ```
