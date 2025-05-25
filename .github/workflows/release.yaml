@@ -24,13 +24,16 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
-      - name: Generate default manifest from chart
-        shell: bash
-        run: |
-          mkdir -p .cr-release-packages
-          helm template charts/giropops-senhas > .cr-release-packages/manifest.yaml
-
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
+        id: release
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+
+      - name: Generate manifest from chart template
+        shell: bash
+        run: helm template charts/giropops-senhas > manifest.yaml
+
+      - name: Upload manifest to chart release
+        shell: bash
+        run: gh release upload giropops-senhas-${{ steps.release.outputs.chart_version }} --repo ${{ github.repository }} manifest.yaml
